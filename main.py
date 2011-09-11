@@ -1,18 +1,26 @@
-from flask import Flask
+from flask import Flask, render_template, request
 app = Flask(__name__)
 
-@app.route("/")
-def hello():     
-	
-    return "Login - redirect to view main"     
+@app.route('/')
+def index():     
+    return render_template('index.html')
 
-@app.route("/new/po_number")
+@app.route('/logon', methods=['POST', 'GET'])
+def logon():
+	values = [request.logon['username'], request.logon['password']]
+	return render_template('logon.html', values=values) 
+
+
+
+@app.route('/new/')
 def new():
 	return "Create a new PO"        
 	
-@app.route("/view/po_number")
-def view():
-	return "View a PO number"      
+@app.route('/view/<int:po_number>')
+def view(po_number):
+	return render_template('view.html', po_number=po_number)
+
+
 
 
 
