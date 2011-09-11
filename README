@@ -1,0 +1,7 @@
+PO
+
+PO is a basic PO system for a small company using the Flask web framework. 
+It will support auth for all users, creating PO's, voiding PO's, emailing from with in the app to suppliers. 
+Possible ideas are export for accounting systems. 
+
+This is very much as work in progress.
