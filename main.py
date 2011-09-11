@@ -7,9 +7,8 @@ def index():
 
 @app.route('/logon', methods=['POST', 'GET'])
 def logon():
-	values = [request.logon['username'], request.logon['password']]
+	values = request.logon['username']
 	return render_template('logon.html', values=values) 
-
 
 
 @app.route('/new/')
@@ -26,4 +25,4 @@ def view(po_number):
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
